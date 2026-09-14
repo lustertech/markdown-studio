@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10b981" />
+    <title>Free Online Markdown Editor &amp; PDF Export | Luster Studio</title>
+    <meta
+      name="description"
+      content="Paste web content as Markdown, format it, preview with synchronized scrolling, resize or expand each panel, and download a polished PDF. Free, no login."
+    />
+    <meta
+      name="keywords"
+      content="markdown editor online, markdown online, online markdown editor, markdown preview, markdown to html, markdown studio, latex markdown, mermaid diagram, markdown formatter, free markdown editor"
+    />
+    <link rel="canonical" href="https://markdown-studio.lustertech.net/" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://markdown-studio.lustertech.net/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://markdown-studio.lustertech.net/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://markdown-studio.lustertech.net/apple-touch-icon.png"
+    />
+    <meta name="robots" content="index, follow" />
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://markdown-studio.lustertech.net/" />
+    <meta
+      property="og:title"
+      content="Free Online Markdown Editor &amp; PDF Export | Luster Studio"
+    />
+    <meta
+      property="og:description"
+      content="Paste web content as Markdown, format it, preview with synchronized scrolling, resize or expand each panel, and download a polished PDF."
+    />
+    <meta property="og:site_name" content="Luster Markdown Studio" />
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Free Online Markdown Editor &amp; PDF Export | Luster Studio"
+    />
+    <meta
+      name="twitter:description"
+      content="Paste web content as Markdown, format it, preview with synchronized scrolling, resize or expand each panel, and download a polished PDF."
+    />
+
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Luster Markdown Studio",
+        "url": "https://markdown-studio.lustertech.net/",
+        "description": "A free online Markdown editor that converts pasted web content to Markdown, formats documents, synchronizes editor and preview scrolling, exports polished PDFs, and supports resizable or full-screen panels.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Luster Information",
+          "url": "https://www.lustertech.net/"
+        },
+        "featureList": [
+          "Convert pasted web content to Markdown",
+          "Format and normalize Markdown",
+          "Synchronized editor and preview scrolling",
+          "Resizable editor and preview panels",
+          "Full-screen editor or preview",
+          "PDF export from preview",
+          "Live Markdown preview",
+          "GitHub Flavored Markdown",
+          "LaTeX math rendering",
+          "Mermaid diagram support",
+          "Syntax highlighting",
+          "Dark mode"
+        ]
+      }
+    </script>
+    <script>
+      (function () {
+        var preference = "system";
+        try {
+          var savedPreference = localStorage.getItem("luster-md-studio-theme");
+          if (savedPreference === "light" || savedPreference === "dark") {
+            preference = savedPreference;
+          }
+        } catch (error) {}
+        var resolved =
+          preference === "system"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : preference;
+        document.documentElement.dataset.theme = resolved;
+        document.documentElement.style.colorScheme = resolved;
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/abcjs@6.7.0/dist/abcjs-basic-min.js"></script>
+    <link
+      id="markdownThemeStylesheet"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.9.0/github-markdown-light.css"
+    />
+    <script>
+      var initialMarkdownTheme =
+        document.documentElement.dataset.theme === "dark"
+          ? "dark-high-contrast"
+          : "light";
+      document.getElementById("markdownThemeStylesheet").href =
+        "https://cdn.jsdelivr.net/npm/github-markdown-css@5.9.0/github-markdown-" +
+        initialMarkdownTheme +
+        ".css";
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/turndown@7.2.0/dist/turndown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/turndown-plugin-gfm@1.0.2/dist/turndown-plugin-gfm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script type="module" crossorigin src="./assets/index-DA2fbIQn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BJMRlXnN.css">
+    <link rel="manifest" href="./manifest.webmanifest">
+  </head>
+  <body>
+    <div id="pasteToast"></div>
+    <div id="navbar">
+      <img class="logo" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%20role='img'%20aria-labelledby='title'%3e%3ctitle%20id='title'%3eLuster%20Markdown%20Studio%3c/title%3e%3crect%20width='96'%20height='96'%20rx='20'%20fill='%2310b981'%20/%3e%3cpath%20fill='%23fff'%20d='M17%2027h12l13%2016%2013-16h12v42H55V46L42%2062%2029%2046v23H17V27Z'%20/%3e%3cpath%20fill='%23fff'%20d='M76%2015l2.4%206.6L85%2024l-6.6%202.4L76%2033l-2.4-6.6L67%2024l6.6-2.4L76%2015Z'%20/%3e%3c/svg%3e" alt="" width="26" height="26" />
+      <h1>Luster Markdown Studio</h1>
+      <div class="navbar-spacer"></div>
+      <label class="language-picker" for="languageSelect">
+        <span class="sr-only" data-i18n="language">Language</span>
+        <select id="languageSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh-TW">繁體中文</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="es">Español</option>
+          <option value="pt-BR">Português (Brasil)</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+        </select>
+      </label>
+      <button
+        id="installAppBtn"
+        class="app-text-btn"
+        type="button"
+        aria-haspopup="dialog"
+      >
+        <span data-i18n="installApp">Install app</span>
+      </button>
+      <div class="theme-picker">
+        <button
+          class="icon-btn"
+          id="themeToggleBtn"
+          type="button"
+          aria-label="Appearance: Use system setting"
+          data-i18n-aria-label="appearance"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="themeMenu"
+          title="Appearance: Use system setting"
+        >
+          <i class="fas fa-desktop" aria-hidden="true"></i>
+        </button>
+        <div
+          class="theme-menu"
+          id="themeMenu"
+          role="radiogroup"
+          aria-label="Appearance"
+          hidden
+        >
+          <button
+            class="theme-option"
+            type="button"
+            role="radio"
+            aria-checked="true"
+            data-theme-preference="system"
+          >
+            <i class="fas fa-desktop" aria-hidden="true"></i>
+            <span data-i18n="themeSystem">Use system setting</span>
+            <i class="fas fa-check theme-check" aria-hidden="true"></i>
+          </button>
+          <button
+            class="theme-option"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            data-theme-preference="light"
+          >
+            <i class="fas fa-sun" aria-hidden="true"></i>
+            <span data-i18n="themeLight">Light</span>
+            <i class="fas fa-check theme-check" aria-hidden="true"></i>
+          </button>
+          <button
+            class="theme-option"
+            type="button"
+            role="radio"
+            aria-checked="false"
+            data-theme-preference="dark"
+          >
+            <i class="fas fa-moon" aria-hidden="true"></i>
+            <span data-i18n="themeDark">Dark</span>
+            <i class="fas fa-check theme-check" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <dialog
+      id="installAppDialog"
+      aria-labelledby="installAppTitle"
+      aria-describedby="installAppDescription"
+    >
+      <h2 id="installAppTitle" data-i18n="installTitle">
+        Install Markdown Studio
+      </h2>
+      <p id="installAppDescription"></p>
+      <p>
+        <span data-i18n="installBody"
+          >The desktop app can open Markdown and text files. Enable automatic
+          saving for each file before changes can be written back; other formats
+          are imported as copies.</span
+        >
+      </p>
+      <p>
+        <span data-i18n="installAssociation"
+          >After installation, set Markdown Studio as the default app for .md
+          files in Finder or File Explorer.</span
+        >
+      </p>
+      <form method="dialog">
+        <button class="app-text-btn" autofocus data-i18n="close">Close</button>
+      </form>
+    </dialog>
+    <div id="mainContainer">
+      <aside
+        id="tocSidebar"
+        aria-label="Outline"
+        data-i18n-aria-label="outline"
+      >
+        <div class="toc-header">
+          <span class="toc-title" data-i18n="outline">Outline</span>
+          <button
+            class="icon-btn"
+            id="tocToggleBtn"
+            type="button"
+            aria-label="Expand outline"
+            data-i18n-aria-label="expandOutline"
+            aria-expanded="false"
+            aria-controls="tocList"
+            title="Expand outline"
+            data-i18n-title="expandOutline"
+            disabled
+          >
+            <i class="fas fa-list-ul"></i>
+          </button>
+        </div>
+        <div class="toc-list-clip">
+          <nav
+            id="tocList"
+            class="custom-scroll"
+            aria-label="Outline headings"
+            aria-hidden="true"
+          ></nav>
+        </div>
+        <div
+          id="tocResizer"
+          role="separator"
+          aria-label="Resize outline width"
+          aria-orientation="vertical"
+          aria-valuemin="220"
+          aria-valuemax="520"
+          aria-valuenow="272"
+          aria-hidden="true"
+          tabindex="-1"
+          title="Resize outline width; double-click to reset"
+          data-i18n-title="resizeOutline"
+        ></div>
+      </aside>
+      <div id="workspace">
+        <div id="desktopTabs" hidden>
+          <div
+            id="desktopTabList"
+            role="tablist"
+            aria-label="Open documents"
+          ></div>
+          <button
+            id="desktopDetachBtn"
+            class="app-text-btn"
+            type="button"
+            data-i18n="detachTab"
+          >
+            Open in new window
+          </button>
+        </div>
+        <div id="editorPanel" class="panel-wrap">
+          <div class="panel-header">
+            <span class="panel-title" data-i18n="editor">Editor</span>
+            <div id="desktopDocumentMeta" hidden>
+              <span id="desktopFileName">Untitled document</span>
+              <span id="desktopFileStatus" role="status" aria-live="polite"
+                >No original file is open</span
+              >
+              <button
+                id="desktopSaveBtn"
+                class="app-text-btn"
+                type="button"
+                hidden
+              >
+                <span data-i18n="save">Save</span>
+              </button>
+            </div>
+            <div class="panel-actions">
+              <button class="icon-btn" id="openFileBtn">
+                <i class="far fa-folder-open"></i
+                ><span class="tooltip" data-i18n="openFile"
+                  >Open file (MD/TXT/HTML/DOCX/PDF)</span
+                >
+              </button>
+              <button class="icon-btn" id="desktopNewBtn" type="button" hidden>
+                <i class="far fa-file"></i
+                ><span class="tooltip" data-i18n="newDocument"
+                  >New document</span
+                >
+              </button>
+              <button class="icon-btn" id="formatBtn">
+                <i class="fas fa-wand-magic-sparkles"></i
+                ><span class="tooltip" data-i18n="format">Format</span>
+              </button>
+              <button class="icon-btn" id="editorCopyBtn">
+                <i class="far fa-copy"></i
+                ><span class="tooltip" data-i18n="copy">Copy</span>
+              </button>
+              <button class="icon-btn" id="editorDownloadBtn">
+                <i class="fas fa-file-arrow-down"></i
+                ><span class="tooltip" data-i18n="download">Download .md</span>
+              </button>
+              <button class="icon-btn" id="syncScrollBtn">
+                <i class="fas fa-link" style="color: #10b981"></i
+                ><span class="tooltip" data-i18n="syncOn"
+                  >Synchronized scrolling on</span
+                >
+              </button>
+              <button class="icon-btn" id="editorExpandBtn">
+                <i class="fas fa-up-right-and-down-left-from-center"></i
+                ><span class="tooltip" data-i18n="expand">Expand</span>
+              </button>
+            </div>
+          </div>
+          <textarea
+            id="input"
+            spellcheck="false"
+            class="custom-scroll"
+            placeholder="Paste content copied from a webpage and it will be converted to Markdown automatically."
+            data-i18n-placeholder="placeholder"
+          ></textarea>
+          <input
+            id="fileInput"
+            type="file"
+            hidden
+            accept=".md,.markdown,.mdown,.mkd,.txt,.text,.html,.htm,.xhtml,.docx,.pdf,.csv,.tsv,.json,.xml,.yaml,.yml,.log,text/plain,text/html,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          />
+          <div class="panel-status">
+            <span id="editorCharCount">0 chars</span>
+            <span id="editorLineCount">0 lines</span>
+          </div>
+        </div>
+        <div id="resizer">
+          <div id="resizerIcon">
+            <i class="fas fa-chevron-left"></i
+            ><i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <div id="previewPanel" class="panel-wrap">
+          <div class="panel-header">
+            <span class="panel-title" data-i18n="preview">Preview</span>
+            <div class="panel-actions">
+              <button class="icon-btn" id="previewCopyBtn">
+                <i class="far fa-copy"></i
+                ><span class="tooltip" data-i18n="copy">Copy</span>
+              </button>
+              <button class="icon-btn" id="copyHtmlBtn">
+                <i class="fas fa-code"></i
+                ><span class="tooltip" data-i18n="copyHtml">Copy HTML</span>
+              </button>
+              <button class="icon-btn" id="pdfBtn">
+                <i class="fas fa-file-pdf"></i
+                ><span class="tooltip" data-i18n="exportPdf">Export PDF</span>
+              </button>
+              <button class="icon-btn" id="previewExpandBtn">
+                <i class="fas fa-up-right-and-down-left-from-center"></i
+                ><span class="tooltip" data-i18n="expand">Expand</span>
+              </button>
+            </div>
+          </div>
+          <div id="previewContent" class="custom-scroll">
+            <div id="markdownBody" class="markdown-body"></div>
+          </div>
+          <div class="panel-status">
+            <span id="previewCharCount">0 rendered chars</span>
+            <span style="color: #10b981; font-weight: 500"
+              ><span data-i18n="pdfReady">PDF-ready · LaTeX ✓</span></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="appFooter">
+      <img
+        src="https://static.wixstatic.com/media/4a0432_06eba3ab3df149589fbd3e44f0cbc2a3~mv2.png/v1/fill/w_40,h_40,lg_1,usm_0.66_1.00_0.01/4a0432_06eba3ab3df149589fbd3e44f0cbc2a3~mv2.png"
+        alt="達暉資訊"
+      />
+      <span>Powered by</span>
+      <a href="https://www.lustertech.net" target="_blank"
+        >達暉資訊有限公司 (Luster Information)</a
+      >
+      <span>&middot;</span>
+      <span>Luster Markdown Studio</span>
+      <span>&middot;</span>
+      <a id="featuresLink" href="./features.html" data-i18n="features"
+        >Features</a
+      >
+      <span>&middot;</span>
+      <a id="termsLink" href="./terms.html" data-i18n="terms">Terms</a>
+      <span>&middot;</span>
+      <span>&copy; 2026 Luster Information</span>
+    </div>
+  </body>
+</html>

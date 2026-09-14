@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Luster Markdown Studio",
+  "short_name": "Markdown Studio",
+  "description": "編輯 Markdown，授權後自動儲存至本機原檔。",
+  "lang": "zh-TW",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#10b981",
+  "icons": [
+    { "src": "./app-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./app-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "file_handlers": [
+    {
+      "action": "./",
+      "accept": {
+        "text/markdown": [".md", ".markdown", ".mdown", ".mkd"]
+      },
+      "launch_type": "single-client"
+    }
+  ],
+  "launch_handler": { "client_mode": "focus-existing" }
+}

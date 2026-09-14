@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://markdown-studio.lustertech.net/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://markdown-studio.lustertech.net/features.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://markdown-studio.lustertech.net/terms.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url><loc>https://markdown-studio.lustertech.net/zh-tw/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/zh-tw/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/zh-cn/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/zh-cn/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/es/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/es/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/pt-br/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/pt-br/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/ja/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/ja/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/ko/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/ko/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/de/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/de/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/fr/features.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://markdown-studio.lustertech.net/fr/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+</urlset>
